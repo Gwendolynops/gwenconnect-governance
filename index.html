@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>GwenConnect Governance</title>
+
+  <meta name="theme-color" content="#102a43">
+
+  <style>
+    :root {
+      --navy: #102a43;
+      --navy2: #163b5c;
+      --gold: #d9a441;
+      --bg: #f4f7fb;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .loader {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, var(--navy), var(--navy2));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transition: opacity .3s ease;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loaderCard {
+      width: min(90%, 420px);
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 26px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 20px 45px rgba(0,0,0,.25);
+    }
+
+    .logo {
+      width: 76px;
+      height: 76px;
+      border-radius: 22px;
+      background: white;
+      color: var(--navy);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 16px;
+      font-weight: 900;
+      font-size: 34px;
+    }
+
+    .loader h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .loader p {
+      margin: 8px 0 0;
+      color: #dbeafe;
+      font-size: 14px;
+    }
+
+    .spinner {
+      width: 34px;
+      height: 34px;
+      border: 4px solid rgba(255,255,255,.25);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      margin: 22px auto 0;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    iframe {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: white;
+    }
+
+    .fallback {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 10;
+      background: var(--gold);
+      color: #111827;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 13px;
+      box-shadow: 0 10px 25px rgba(15,23,42,.25);
+    }
+
+    @media (max-width: 700px) {
+      .fallback {
+        left: 14px;
+        right: 14px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="loader" class="loader">
+    <div class="loaderCard">
+      <div class="logo">G</div>
+      <h1>GwenConnect Governance</h1>
+      <p>Loading compliance, evidence and audit dashboard...</p>
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <iframe
+    id="gwenFrame"
+    src="https://script.google.com/macros/s/AKfycbw8ZOTji-YSn-NYAymYhcsHg9oDoQVEKfx91LCFeiYZ3PAskNcnnakiTAmDuTH7jevE/exec"
+    allow="clipboard-read; clipboard-write"
+  ></iframe>
+
+  <a
+    class="fallback"
+    href="https://script.google.com/macros/s/AKfycbw8ZOTji-YSn-NYAymYhcsHg9oDoQVEKfx91LCFeiYZ3PAskNcnnakiTAmDuTH7jevE/exec"
+    target="_blank"
+  >
+    Open directly
+  </a>
+
+  <script>
+    const frame = document.getElementById("gwenFrame");
+    const loader = document.getElementById("loader");
+
+    frame.addEventListener("load", function () {
+      setTimeout(function () {
+        loader.classList.add("hidden");
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
