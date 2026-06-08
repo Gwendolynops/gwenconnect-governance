@@ -65,20 +65,12 @@
       text-align: center;
       box-shadow: 0 20px 45px rgba(0,0,0,.25);
     }
-
-    .logo {
-      width: 76px;
-      height: 76px;
-      border-radius: 22px;
-      background: white;
-      color: var(--navy);
-      display: grid;
-      place-items: center;
-      margin: 0 auto 16px;
-      font-weight: 900;
-      font-size: 34px;
-    }
-
+.logoImage {
+  width: 120px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto 18px;
+}
     .loader h1 {
       margin: 0;
       font-size: 26px;
@@ -144,7 +136,11 @@
 
   <div id="loader" class="loader">
     <div class="loaderCard">
-      <div class="logo">G</div>
+      <img
+  src="logo.png"
+  class="logoImage"
+  alt="GwenConnect Governance"
+/>
       <h1>GwenConnect Governance</h1>
       <p>Loading compliance, evidence and audit dashboard...</p>
       <div class="spinner"></div>
