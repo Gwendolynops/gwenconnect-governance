@@ -3,8 +3,8 @@
   "short_name": "Governance",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#102a43",
-  "theme_color": "#102a43",
+  "background_color": "#3c9fc9",
+  "theme_color": "#3c9fc9",
   "icons": [
     {
       "src": "logo.svg",
